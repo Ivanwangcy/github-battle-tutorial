@@ -32,6 +32,20 @@ class ProfilePic extends React.Component {
   }
 }
 
+class Link extends React.Component {
+  changeURL(){
+    console.log(this.props.href);
+    window.location.replace(this.props.href);
+  }
+  render() {
+    return (
+      <span onClick={this.changeURL.bind(this)} style={{color: 'blue', cursor: 'pointer'}}>
+        {this.props.children}
+      </span>
+    )
+  }
+}
+
 /**
  * 简介 链接
  */
@@ -39,9 +53,9 @@ class ProfileLink extends React.Component {
   render(){
     return (
       <div>
-        <a href={'https://www.github.com/' + this.props.username}>
+        <Link href={'https://www.github.com/' + this.props.username}>
           {this.props.username}
-        </a>
+        </Link>
       </div>
     );
    }
