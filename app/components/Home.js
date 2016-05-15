@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
+import ReactRouter, { Link } from 'react-router';
+import transparentBg from '../styles/index';
 
-/**
- * [HelloWorld stateless functional component 无状态组件 简化写法]
- * @method HelloWorld
- * @param  {[type]}   props [传人的属性]
- */
-function HelloWorld (props) {
-  return (
-    <div>Hello {props.name}</div>
-  )
-}
 
 class Home extends Component {
   render() {
     return (
-      <div>
-        <HelloWorld name='Ivan'/>
-        Hello from Home!
+      <div className='jumbotron col-sm-12 text-center' style={transparentBg}>
+        <h1>Github Battle</h1>
+        <p className='lead'>Some fancy motto</p>
+        <Link to='playerone'>
+          <button type='button' className='btn btn-lg btn-success'>Get Started</button>
+        </Link>
       </div>
     );
   }
