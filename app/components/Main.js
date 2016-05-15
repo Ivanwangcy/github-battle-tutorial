@@ -4,7 +4,7 @@ export default class Main extends Component {
   render() {
     return (
       <div className='main-container'>
-        Hello Main!
+        Hello from Main!
         {this.props.children}
       </div>
     );
