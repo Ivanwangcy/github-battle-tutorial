@@ -1,20 +1,9 @@
-import React , { Component } from 'react';
+import React , { Component, PropTypes } from 'react';
+import Prompt from '../components/Prompt';
 
 class PromptContainer extends Component {
-  // static contextTypes = {
-  //   router: React.PropTypes.object.isRequired
-  // };
-
-  // static {
-  //   contextTypes : {
-  //     router: React.PropTypes.object.isRequired
-  //   }
-  // }
   constructor (props, context) {
     super(props);
-    // this.contextTypes = {
-    //   router: React.PropTypes.object.isRequired
-    // };
     this.state = {
       username: ''
     };
@@ -22,25 +11,39 @@ class PromptContainer extends Component {
     console.log(props.location.search);
   }
 
-  onUpdateUser (event) {
+  /**
+   * [handleUpdateUser usnername Change 事件]
+   * @method handleUpdateUser
+   * @param  {[type]}         event [description]
+   * @return {[type]}               [description]
+   */
+  handleUpdateUser (event) {
     this.setState({
         username: event.target.value
       });
   }
 
-  onSubmitUser(event) {
+  /**
+   * [handleSubmitUser submit username event]
+   * @method handleSubmitUser
+   * @param  {[type]}         event [description]
+   * @return {[type]}               [description]
+   */
+  handleSubmitUser(event) {
     event.preventDefault();
     let username = this.state.username;
     this.setState({
       username: ''
     });
 
-    // console.log(this.props.location);
-    console.log(this.props.params);
-    console.log(this.props.routeParams);
-
     if(this.props.routeParams.playerone){
-      console.log("sdfasdffffffff");
+      this.context.router.push({
+        pathname: '/battle',
+        query: {
+          playerone: this.props.routeParams.playerone,
+          playertwo: this.props.username
+        }
+      })
     }else {
       this.context.router.push('/playertwo/' + this.state.username);
     }
@@ -48,29 +51,12 @@ class PromptContainer extends Component {
 
   render () {
     return (
-      <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
-        <h1>{this.props.route.header}</h1>
-        <div className="col-sm-12">
-          <form onSubmit={ this.onSubmitUser.bind(this) }>
-            <div className="form-group">
-              <input
-                className="form-control"
-                placeholder="Github Username"
-                type="text"
-                onChange={ (event) => this.onUpdateUser(event) }
-                value={this.state.username}
-                />
-            </div>
-            <div className="form-group col-sm-4 col-sm-offset-4">
-              <button
-                className="btn btn-block btn-success"
-                type="submit">
-                  Continue
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <Prompt
+        onSubmitUser={this.handleSubmitUser.bind(this)}
+        onUpdateUser={this.handleUpdateUser.bind(this)}
+        header={this.props.route.header}
+        username={this.state.username}
+        />
     );
   }
 }
@@ -81,7 +67,7 @@ class PromptContainer extends Component {
  * @type {上下文 router 对象}
  */
 PromptContainer.contextTypes = {
-    router: React.PropTypes.object.isRequired
+      router: React.PropTypes.object.isRequired
     };
 
 export default PromptContainer;
