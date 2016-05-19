@@ -9,6 +9,7 @@ class PromptContainer extends Component {
     };
     console.log(context);
     console.log(props.location.search);
+    console.log(props.location.query);
   }
 
   /**
