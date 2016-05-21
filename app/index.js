@@ -4,5 +4,5 @@ import routers from './config/routers';
 
 ReactDOM.render(
   routers,
-  document.body
+  document.getElementById('root')
 );

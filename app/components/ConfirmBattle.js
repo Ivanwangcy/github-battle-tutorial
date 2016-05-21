@@ -9,7 +9,7 @@ function ConfirmBattle (prop) {
 }
 
 ConfirmBattle.PropTypes = {
-  'isLoading': PropTypes.string.isRequired
+  'isLoading': PropTypes.bool.isRequired
 }
 
 export default ConfirmBattle;
