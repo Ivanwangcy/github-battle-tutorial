@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import ConfirmBattle from '../components/ConfirmBattle';
+import githubHelpers from '../utils/githubHelpers';
 
 class ConfirmBattleContainer extends Component {
   constructor(prop, context) {
@@ -21,6 +22,7 @@ class ConfirmBattleContainer extends Component {
     console.log("component did Mount");
     var query = this.props.location.query;
 
+    githubHelpers.getPlayersInfo(query);
     console.log(query);
   }
 
