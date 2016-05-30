@@ -24,8 +24,12 @@ class ConfirmBattleContainer extends Component {
     console.log(query);
 
     githubHelpers.getPlayersInfo([query.playone, query.playtwo])
-    .then( function (players) {
+    .then( (players) => {
         console.log("PLAYERS", players);
+        this.setState({
+          isLoading: false,
+          playersInfo: [players[0], players[1]]
+        })
       }
     );
   }
