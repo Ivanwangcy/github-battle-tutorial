@@ -42,7 +42,7 @@ class PromptContainer extends Component {
         pathname: '/battle',
         query: {
           playerone: this.props.routeParams.playerone,
-          playertwo: this.props.username
+          playertwo: this.state.username
         }
       })
     }else {

@@ -21,9 +21,13 @@ class ConfirmBattleContainer extends Component {
   componentDidMount() {
     console.log("component did Mount");
     var query = this.props.location.query;
-
-    githubHelpers.getPlayersInfo(query);
     console.log(query);
+
+    githubHelpers.getPlayersInfo([query.playone, query.playtwo])
+    .then( function (players) {
+        console.log("PLAYERS", players);
+      }
+    );
   }
 
   componentWillReceiveProps () {

@@ -11,7 +11,16 @@ function getUserInfo(username) {
 var helpers = {
   getPlayersInfo: function(players) {
     // fetch some data from Github
-
+    return axios.all(
+      players.map(function (username){
+        return getUserInfo(username);
+      })
+    ).then(function (info){
+      console.log("INFO", info);
+      return info.map(function (user){
+        return user.data;
+      })
+    })
   }
 }
 
