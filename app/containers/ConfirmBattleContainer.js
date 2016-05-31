@@ -42,10 +42,15 @@ class ConfirmBattleContainer extends Component {
     console.log("Component will Unmount");
   }
 
+  handleInitiateBattle() {
+    console.log(this.state);
+  }
+
   render() {
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}
+        onInitiateBattle={this.state.handleInitiateBattle}
         playersInfo={this.state.playersInfo}
       />
     )

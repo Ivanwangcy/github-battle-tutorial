@@ -2,4 +2,11 @@ let transparentBg = {
   background: 'transparent'
 }
 
-export default transparentBg;
+let space = {
+
+}
+
+export default {
+  transparentBg,
+  space
+} ;
