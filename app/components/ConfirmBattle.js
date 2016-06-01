@@ -1,31 +1,36 @@
 import React, {Component, PropTypes} from 'react';
 import styles from '../styles/index';
+import { Link } from 'react-router';
 
 function puke (object) {
   return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
 }
-function ConfirmBattle (prop) {
+function ConfirmBattle (props) {
   return (
-    prop.isLoading === true
+    props.isLoading === true
     ? <p>Loding! </p>
   : <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
       <h1>Confirm Players</h1>
       <div className='col-sm-8col-sm-offset-2'>
         <div className='col-sm-6'>
           <p className='lead'> Player 1</p>
-          PLAYER 1 INFO
+            {puke(props.playersInfo[0])}
         </div>
         <div className='col-sm-6'>
           <p className='lead'> Player 2</p>
-          PLAYER 2 INFO
+            {puke(props.playersInfo[1])}
         </div>
       </div>
       <div className='col-sm-8 col-sm-offset-2'>
         <div className='col-sm-12' style={styles.space}>
-          INITIATE BATTLE BUTTON
+          <button className='btn btn-lg btn-success' onClick={props.onInitiateBattle}>
+            Initiate Battle!
+          </button>
         </div>
         <div className='col-sm-12' style={styles.space}>
-          LINK TO /PLAYERONE
+          <Link to='/playerone'>
+            <button className="btn btn-lg btn-denger">Reselect Players</button>
+          </Link>
         </div>
       </div>
     </div>
