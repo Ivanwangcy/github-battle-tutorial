@@ -44,6 +44,12 @@ class ConfirmBattleContainer extends Component {
 
   handleInitiateBattle() {
     console.log(this.state);
+    this.context.router.push({
+      pathname: '/results',
+      state: {
+        playersInfo: this.state.playersInfo
+      }
+    })
   }
 
   render() {
