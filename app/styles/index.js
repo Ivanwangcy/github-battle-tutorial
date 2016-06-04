@@ -3,7 +3,7 @@ let transparentBg = {
 }
 
 let space = {
-
+  marginTop: '25px'
 }
 
 export default {
