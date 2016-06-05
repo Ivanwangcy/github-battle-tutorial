@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import styles from '../styles/index';
 import { Link } from 'react-router';
 import UserDetails from './UserDetails';
+import UserDetailsWrapper from './UserDetailsWrapper';
 
 function puke (object) {
   return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
@@ -21,7 +22,6 @@ function ConfirmBattle (props) {
             <UserDetails info={props.playersInfo[1]}/>
           </UserDetailsWrapper>
             {/*{puke(props.playersInfo[1])}*/}
-        </div>
       </div>
       <div className='col-sm-8 col-sm-offset-2'>
         <div className='col-sm-12' style={styles.space}>
@@ -31,7 +31,7 @@ function ConfirmBattle (props) {
         </div>
         <div className='col-sm-12' style={styles.space}>
           <Link to='/playerone'>
-            <button className="btn btn-lg btn-denger">Reselect Players</button>
+            <button className="btn btn-lg btn-danger">Reselect Players</button>
           </Link>
         </div>
       </div>

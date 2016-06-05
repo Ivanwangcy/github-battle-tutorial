@@ -9,8 +9,8 @@ function UserDetails(user){
       {<li className="list-group-item"><h3>UserName: {user.info.login}</h3></li>}
       {!!user.info.location && <li className="list-group-item"><h3>Location: {user.info.location}</h3></li>}
       {!!user.info.company && <li className="list-group-item"><h3>Company: {user.info.company}</h3></li>}
-      {<li className="list-group-item"><h3>Followers: {user.info.follwers}</h3></li>}
-      {<li className="list-group-item"><h3>Followering: {user.info.follwering}</h3></li>}
+      {<li className="list-group-item"><h3>Followers: {user.info.followers}</h3></li>}
+      {<li className="list-group-item"><h3>Following: {user.info.following}</h3></li>}
       {<li className="list-group-item"><h3>Public Repos: {user.info.public_repos}</h3></li>}
       {!!user.info.blog && <li className="list-group-item"><a href="user.info.blog">Blog: {user.info.blog}</a></li>}
     </div>
@@ -25,8 +25,8 @@ UserDetails.propTypes = {
     login: PropTypes.string.isRequired,
     location: PropTypes.string,
     company: PropTypes.string,
-    follwers: PropTypes.number.isRequired,
-    follwering: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+    following: PropTypes.number.isRequired,
     public_repos: PropTypes.number.isRequired,
     blog: PropTypes.string
   })
