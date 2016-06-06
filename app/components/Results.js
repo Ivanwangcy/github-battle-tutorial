@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 function Results (props) {
   return (
@@ -6,4 +6,9 @@ function Results (props) {
   );
 }
 
+Results.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  scores: PropTypes.array.isRequired,
+  playersInfo: PropTypes.array.isRequired
+}
 export default Results;

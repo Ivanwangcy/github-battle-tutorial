@@ -10,7 +10,7 @@ class ConfirmBattleContainer extends Component {
       isLoading: true,
       playersInfo: []
     }
-
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);  
     console.log("Component initial");
   }
 
@@ -56,7 +56,7 @@ class ConfirmBattleContainer extends Component {
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}
-        onInitiateBattle={this.state.handleInitiateBattle}
+        onInitiateBattle={this.handleInitiateBattle}
         playersInfo={this.state.playersInfo}
       />
     )
