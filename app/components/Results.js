@@ -1,8 +1,13 @@
 import React, {PropTypes} from 'react';
 
+function puke (object) {
+  return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
+}
+
 function Results (props) {
   return (
-    <div>Results! </div>
+    <div>{puke(props.playersInfo)} </div>
+
   );
 }
 

@@ -29,7 +29,7 @@ function getPlayersData(player){
     })
 }
 
-function caculateScores(players){
+function calculateScores(players){
   return [
     players[0].followers * 3 + players[0].totalStars,
     players[1].followers * 3 + players[1].totalStars
@@ -52,8 +52,14 @@ var helpers = {
       console.warn("Error in getPlayersInfo: " + error);
     })
   },
-  battle: function() {
-    return "";
+  battle: function(players) {
+    let playerOneData = getPlayersData(players[0]);
+    let playerTwoData = getPlayersData(players[1]);
+    return axios.all([playerOneData, playerTwoData])
+      .then(calculateScores)
+      .catch(function(err){
+        console.warn("Error in getPlayersInfo: " + err);
+      });
   }
 }
 
