@@ -10,7 +10,7 @@ class ConfirmBattleContainer extends Component {
       isLoading: true,
       playersInfo: []
     }
-    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);  
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);
     console.log("Component initial");
   }
 
