@@ -6,7 +6,9 @@ function puke (object) {
 
 function Results (props) {
   return (
-    <div>{puke(props.playersInfo)} </div>
+    props.isLoading === true
+      ? <div>Loading ...</div>
+      : <div>{puke(props.playersInfo)} </div>
 
   );
 }
