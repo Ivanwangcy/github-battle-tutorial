@@ -3,6 +3,7 @@ import styles from '../styles/index';
 import { Link } from 'react-router';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
+import MainContainer from './MainContainer';
 // function puke (object) {
 //   return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
 // }
@@ -11,7 +12,8 @@ function Results (props) {
   let [winningIndex, losingIndex] = props.scores[0] > props.scores[1] ? [0,1] : [1,0];
 
   return (
-    <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+    // <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+    <MainContainer>
       <h1>Results</h1>
       <div className='col-sm-8 col-sm-offset-2'>
         <UserDetailsWrapper header='Winner'>
@@ -26,7 +28,8 @@ function Results (props) {
           <button className="btn btn-lg btn-danger">start Over</button>
         </Link>
       </div>
-    </div>
+    </MainContainer>
+    // </div>
   );
 }
 

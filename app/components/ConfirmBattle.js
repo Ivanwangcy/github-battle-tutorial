@@ -3,6 +3,7 @@ import styles from '../styles/index';
 import { Link } from 'react-router';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
+import MainContainer from './MainContainer';
 
 // function puke (object) {
 //   return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
@@ -12,7 +13,7 @@ function ConfirmBattle (props) {
   return (
     props.isLoading === true
     ? <p>Loding! </p>
-    : <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+    : <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
               {/*{puke(props.playersInfo[0])}*/}
@@ -36,7 +37,7 @@ function ConfirmBattle (props) {
             </Link>
           </div>
         </div>
-      </div>
+      </MainContainer>
   );
 }
 
