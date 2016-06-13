@@ -19,9 +19,13 @@ function getTotalStars(repos) {
 }
 
 function getPlayersData(player){
-  getRepos(player.login)
+  return getRepos(player.login)
     .then(getTotalStars)
     .then(function(totalStars){
+      console.log({
+        followers: player.followers,
+        totalStars: totalStars
+      });
       return {
         followers: player.followers,
         totalStars: totalStars
@@ -30,6 +34,7 @@ function getPlayersData(player){
 }
 
 function calculateScores(players){
+  console.log(players);
   return [
     players[0].followers * 3 + players[0].totalStars,
     players[1].followers * 3 + players[1].totalStars
@@ -53,8 +58,8 @@ var helpers = {
     })
   },
   battle: function(players) {
-    let playerOneData = getPlayersData(players[0]);
-    let playerTwoData = getPlayersData(players[1]);
+    var playerOneData = getPlayersData(players[0]);
+    var playerTwoData = getPlayersData(players[1]);
     return axios.all([playerOneData, playerTwoData])
       .then(calculateScores)
       .catch(function(err){

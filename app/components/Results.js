@@ -8,7 +8,7 @@ function Results (props) {
   return (
     props.isLoading === true
       ? <div>Loading ...</div>
-      : <div>{puke(props.playersInfo)} </div>
+      : <div>{puke(props)} </div>
 
   );
 }

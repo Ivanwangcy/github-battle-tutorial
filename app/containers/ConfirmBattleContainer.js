@@ -23,7 +23,7 @@ class ConfirmBattleContainer extends Component {
     var query = this.props.location.query;
     console.log(query);
 
-    githubHelpers.getPlayersInfo([query.playone, query.playtwo])
+    githubHelpers.getPlayersInfo([query.playerone, query.playertwo])
     .then( (players) => {
         console.log("PLAYERS", players);
         this.setState({
