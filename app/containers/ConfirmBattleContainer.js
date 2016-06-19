@@ -4,6 +4,11 @@ import ConfirmBattle from '../components/ConfirmBattle';
 import githubHelpers from '../utils/githubHelpers';
 
 class ConfirmBattleContainer extends Component {
+
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  }
+
   constructor(prop, context) {
     super(prop);
     this.state = {
@@ -63,8 +68,8 @@ class ConfirmBattleContainer extends Component {
   }
 }
 
-ConfirmBattleContainer.contextTypes = {
-  router: PropTypes.object.isRequired
-}
+// ConfirmBattleContainer.contextTypes = {
+//   router: PropTypes.object.isRequired
+// }
 
 export default ConfirmBattleContainer;

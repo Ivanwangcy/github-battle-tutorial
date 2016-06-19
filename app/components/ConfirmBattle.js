@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 import MainContainer from './MainContainer';
-
+import Loading from './Loading';
 // function puke (object) {
 //   return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
 // }
@@ -12,7 +12,7 @@ import MainContainer from './MainContainer';
 function ConfirmBattle (props) {
   return (
     props.isLoading === true
-    ? <p>Loding! </p>
+    ? <Loading />
     : <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
@@ -41,7 +41,7 @@ function ConfirmBattle (props) {
   );
 }
 
-ConfirmBattle.PropTypes = {
+ConfirmBattle.propTypes = {
   'isLoading': PropTypes.bool.isRequired,
   'onInitiateBattle': PropTypes.func.isRequired,
   'playersInfo': PropTypes.array.isRequired

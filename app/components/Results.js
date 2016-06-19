@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 import MainContainer from './MainContainer';
+import Loading from './Loading';
 // function puke (object) {
 //   return <pre>{JSON.stringify(object, null, "\t")}</pre>; // 格式化输出
 // }
@@ -28,7 +29,7 @@ function Tie (props) {
 
 function Results (props) {
   if (props.isLoading) {
-    return <p>Loading ... </p>;
+    return <Loading />;
   }
 
   if (props.scores[0] === props.scores[1]) {

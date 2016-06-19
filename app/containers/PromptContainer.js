@@ -2,6 +2,11 @@ import React , { Component, PropTypes } from 'react';
 import Prompt from '../components/Prompt';
 
 class PromptContainer extends Component {
+
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  }
+
   constructor (props, context) {
     super(props);
     this.state = {
@@ -67,8 +72,8 @@ class PromptContainer extends Component {
  * [contextTypes 类的实例属性]
  * @type {上下文 router 对象}
  */
-PromptContainer.contextTypes = {
-      router: React.PropTypes.object.isRequired
-    };
+// PromptContainer.contextTypes = {
+//       router: React.PropTypes.object.isRequired
+//     };
 
 export default PromptContainer;
