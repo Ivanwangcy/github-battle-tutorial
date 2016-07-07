@@ -7,3 +7,8 @@
 
 ## 开发环境搭建
 在 Github 创建项目仓库或者直接检出我的这个项目查看最终效果。
+```sh
+$ git clone https://github.com/Ivanwangcy/github-battle-tutorial.git
+$ npm install
+$ npm start
+```
