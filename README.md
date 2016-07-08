@@ -12,3 +12,5 @@ $ git clone https://github.com/Ivanwangcy/github-battle-tutorial.git
 $ npm install
 $ npm start
 ```
+## 预览地址
+https://ivanwangcy.github.io/github-battle-tutorial
