@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactRouter, {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import ReactRouter, {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-router';
 
 import Main from '../components/Main';
 import Home from '../components/Home';
@@ -8,7 +8,7 @@ import ConfirmBattleContainer from '../containers/ConfirmBattleContainer';
 import ResultsContainer from '../containers/ResultsContainer';
 
 let routes = (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
       <Route path="playerone" header="Player One" component={PromptContainer}/>

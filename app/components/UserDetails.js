@@ -1,6 +1,26 @@
 import React, {PropTypes} from 'react';
 
 function UserDetails(user){
+
+  // static propTypes = {
+  //   score: PropTypes.number,
+  //   info: PropTypes.shape({
+  //     avatar_url: PropTypes.string.isRequired,
+  //     name: PropTypes.string,
+  //     login: PropTypes.string.isRequired,
+  //     location: PropTypes.string,
+  //     company: PropTypes.string,
+  //     followers: PropTypes.number.isRequired,
+  //     following: PropTypes.number.isRequired,
+  //     public_repos: PropTypes.number.isRequired,
+  //     blog: PropTypes.string
+  //   })
+  // };
+
+  // defaultProps = {
+  //   df: 134,
+  // }
+
   return (
     <div>
       {!!user.score && <li className="list-group-item"><h3>Score: {user.score}</h3></li>}
