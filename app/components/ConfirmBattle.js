@@ -22,7 +22,7 @@ function ConfirmBattle (props) {
             </UserDetailsWrapper>
             <UserDetailsWrapper header='Player Two'>
               <UserDetails info={props.playersInfo[1]}/>
-            </UserDetailsWrapper>
+              </UserDetailsWrapper>
               {/*{puke(props.playersInfo[1])}*/}
         </div>
         <div className='col-sm-8 col-sm-offset-2'>

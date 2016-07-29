@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import '../styles/main.css';
 
-function App (){
-  return (<div>Heele</div>);
-}
-
-<App />
+// function App (){
+//   return (<div>Heele</div>);
+// }
+//
+// <App />
 
 export default class Main extends Component {
   render() {
